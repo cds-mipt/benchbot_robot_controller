@@ -165,8 +165,9 @@ def _move_to_pose(goal, publisher, controller):
     if (time() - t < _MOVE_TIMEOUT):
         _move_to_angle(goal, publisher, controller)
     publisher.publish(Twist())
-    rospy.loginfo("Sleep...")
-    rospy.sleep(3)
+    sleep_for = float(rospy.get_param("/sleep_for", 3))
+    rospy.loginfo("Sleep for " + str(sleep_for) + "...")
+    rospy.sleep(sleep_for)
     rospy.loginfo("Continue")
 
 
