@@ -166,7 +166,7 @@ def _move_to_pose(goal, publisher, controller):
         _move_to_angle(goal, publisher, controller)
     publisher.publish(Twist())
     rospy.loginfo("Sleep...")
-    sleep(3)
+    rospy.sleep(3)
     rospy.loginfo("Continue")
 
 
